@@ -10,7 +10,7 @@ This repository contains solutions to various machine round coding problems. The
 
 ## Features
 - Efficient solutions for real-world technical assessments
-- Coded in **JavaScript** and **C++**
+- Coded in **JavaScript**
 - Focus on best practices: clean code, readability, and optimization
-- Organized by problem type (arrays, strings, dynamic programming, etc.)
+- Organized by problem type
 - Comments and explanations to make solutions easier to understand
