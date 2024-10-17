@@ -12,7 +12,7 @@ const Infinitescroll = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}");
+        "https://jsonplaceholder.typicode.com/posts?_limit=20&_page=${page}");
        setPosts((prevPosts)=>[...prevPosts, ...response.data]);
       // console.log("Fetched post");
       // console.log(response.data);
@@ -35,15 +35,7 @@ const Infinitescroll = () => {
       ) {
         setPage((prev) => prev + 1);
       }
-    }, 200); // debounce for 200ms
-    // const handleScroll=()=>{
-    //   setScrollPosition(window.scrollY);
-    //   if(
-    //     window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight-200
-    //   ){
-    //     setPage((prev)=>prev+1);
-    //   }
-    // };
+    }, 200); 
 
     window.addEventListener("scroll",handleScroll);
     return ()=>window.removeEventListener("scroll",handleScroll);
