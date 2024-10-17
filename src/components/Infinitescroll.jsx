@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { debounce } from "lodash";
 
 const Infinitescroll = () => {
   const [posts, setPosts] = useState([]);
@@ -26,14 +27,23 @@ const Infinitescroll = () => {
 
 //useEffect to handle page scrolling
   useEffect(()=>{
-    const handleScroll=()=>{
+    const handleScroll = debounce(() => {
       setScrollPosition(window.scrollY);
-      if(
-        window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight-200
-      ){
-        setPage((prev)=>prev+1);
+      if (
+        window.innerHeight + document.documentElement.scrollTop >=
+        document.documentElement.offsetHeight - 50
+      ) {
+        setPage((prev) => prev + 1);
       }
-    };
+    }, 200); // debounce for 200ms
+    // const handleScroll=()=>{
+    //   setScrollPosition(window.scrollY);
+    //   if(
+    //     window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight-200
+    //   ){
+    //     setPage((prev)=>prev+1);
+    //   }
+    // };
 
     window.addEventListener("scroll",handleScroll);
     return ()=>window.removeEventListener("scroll",handleScroll);
