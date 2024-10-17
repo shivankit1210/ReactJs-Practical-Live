@@ -11,7 +11,7 @@ const Infinitescroll = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts?_limit=10&_page=1");
+        "https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}");
        setPosts((prevPosts)=>[...prevPosts, ...response.data]);
       // console.log("Fetched post");
       // console.log(response.data);
@@ -29,7 +29,7 @@ const Infinitescroll = () => {
     const handleScroll=()=>{
       setScrollPosition(window.scrollY);
       if(
-        window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight-50
+        window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight-200
       ){
         setPage((prev)=>prev+1);
       }
@@ -52,8 +52,8 @@ const Infinitescroll = () => {
             <ul className="flex flex-col justify-center items-start font-semibold">
                 {
                     posts.map(post=>(
-                        <li >     
-                          {/* key={post.id} */}
+                        <li key={post.id}>     
+                          
                             {post.title}
                         </li>
                     ))
