@@ -6,6 +6,7 @@ import Infinitescroll from './components/Infinitescroll';
 import Navbar from './components/Navbar';
 import Home from "./components/Home";
 import ContactUs from './components/ContactUs';
+import RegistrationFrom from './components/RegistrationFrom';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/fetch-component" element={<FetchComponenet />} />
         <Route path='/infinite-scroll' element={<Infinitescroll/>} />
         <Route path='/contactUs' element={<ContactUs/>}/>
+        <Route path='/registration-form' element={<RegistrationFrom/>} />
       </Routes>
     </Router>
   );

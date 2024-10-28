@@ -1,73 +1,96 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
 
-const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-  // Toggle dropdown
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  const [error, setError] = useState("");
+
+  // Handle form input changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    // Submit the data (e.g., send it to an API)
+    console.log("Form Data Submitted", formData);
+
+    // Reset form and error message
+    setFormData({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    });
+    setError("");
   };
 
   return (
-    <nav className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo / Branding */}
-        <div className="text-xl font-bold">SHIVANKIT</div>
-
-        {/* Navbar Links */}
-        <div className="space-x-4">
-          <Link to="/" className="hover:text-gray-300">Home</Link>
-          <Link to="/about" className="hover:text-gray-300">About</Link>
-
-          {/* Dropdown Button */}
-          <div className="relative inline-block">
-            <button
-              onClick={toggleDropdown}
-              className="hover:text-gray-300"
-            >
-              Works
-            </button>
-
-            {/* Dropdown Menu */}
-            {dropdownOpen && (
-              <ul className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg">
-                <li className="border-b">
-                  <Link
-                    to="/counter"
-                    className="block px-4 py-2 hover:bg-gray-300"
-                    onClick={() => setDropdownOpen(false)} // Close dropdown when clicked
-                  >
-                    Counter
-                  </Link>
-                </li>
-                <li className="border-b">
-                  <Link
-                    to="/fetch-component"
-                    className="block px-4 py-2 hover:bg-gray-300"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Fetch Component
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/infinite-scroll"
-                    className="block px-4 py-2 hover:bg-gray-300"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Infinite Scroll
-                  </Link>
-                </li>
-              </ul>
-            )}
-          </div>
-
-          <Link to="/contact" className="hover:text-gray-300">Contact</Link>
+    <div style={{ maxWidth: "400px", margin: "auto" }}>
+      <h2>Registration Form</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
         </div>
-      </div>
-    </nav>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <button type="submit">Register</button>
+      </form>
+    </div>
   );
-};
+}
 
-export default Navbar;
+export default RegistrationForm;

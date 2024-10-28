@@ -13,15 +13,18 @@ const Navbar = () => {
     <nav className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo / Branding */}
-        <div className="text-xl font-bold">SHIVANKIT AGARWAL</div>
+        <div className="text-sm md:text-xl font-bold whitespace-nowrap">
+          <Link to="/" className=" text-xs hover:text-gray-300 ">SHIVANKIT AGARWAL</Link>
+        </div>
+        {/* <div className="text-sm md:text-xl font-bold whitespace-nowrap">SHIVANKIT AGARWAL</div> */}
 
         {/* Navbar Links */}
         <div className="space-x-4 font-semibold ml-16 flex flex-row justify-start  w-[60%] gap-12">
-          <Link to="/" className="hover:text-gray-300 hover:underline">Home</Link>
+          <Link to="/" className=" text-sm hover:text-gray-300 hover:underline">Home</Link>
           {/* <Link to="/about" className="hover:text-gray-300 hover:underline">About</Link> */}
 
           {/* Dropdown Button */}
-          <div className="relative inline-block">
+          <div className="relative inline-block text-sm whitespace-nowrap">
             <button
               onClick={toggleDropdown}
               className="hover:text-gray-300 hover:underline"
@@ -57,6 +60,15 @@ const Navbar = () => {
                     onClick={() => setDropdownOpen(false)}
                   >
                     Infinite Scroll
+                  </Link>
+                </li>
+                <li className="border-b">
+                  <Link
+                    to="/registration-form"
+                    className="block px-4 py-2 hover:bg-gray-300"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Registration Form
                   </Link>
                 </li>
               </ul>
