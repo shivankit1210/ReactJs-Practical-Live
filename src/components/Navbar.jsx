@@ -14,17 +14,17 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo / Branding */}
         <div className="text-sm md:text-xl font-bold whitespace-nowrap">
-          <Link to="/" className=" text-xs hover:text-gray-300 ">SHIVANKIT AGARWAL</Link>
+          <Link to="/" className=" text-xs md:text-lg hover:text-gray-300 ">SHIVANKIT AGARWAL</Link>
         </div>
         {/* <div className="text-sm md:text-xl font-bold whitespace-nowrap">SHIVANKIT AGARWAL</div> */}
 
         {/* Navbar Links */}
         <div className="space-x-4 font-semibold ml-16 flex flex-row justify-start  w-[60%] gap-12">
-          <Link to="/" className=" text-sm hover:text-gray-300 hover:underline">Home</Link>
+          <Link to="/" className=" text-sm md:text-lg hover:text-gray-300 hover:underline">Home</Link>
           {/* <Link to="/about" className="hover:text-gray-300 hover:underline">About</Link> */}
 
           {/* Dropdown Button */}
-          <div className="relative inline-block text-sm whitespace-nowrap">
+          <div className="relative inline-block text-sm md:text-lg whitespace-nowrap">
             <button
               onClick={toggleDropdown}
               className="hover:text-gray-300 hover:underline"
