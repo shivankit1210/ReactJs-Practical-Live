@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FetchComponenet from "./components/FetchComponent"
 import Counter from './components/Counter';
 import Infinitescroll from './components/Infinitescroll';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar/Navbar';
 import Home from "./components/Home";
 import ContactUs from './components/ContactUs';
 import RegistrationFrom from './components/RegistrationFrom';
