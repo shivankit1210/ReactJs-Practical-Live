@@ -7,6 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import Home from "./components/Home";
 import ContactUs from './components/ContactUs';
 import RegistrationFrom from './components/RegistrationFrom';
+import TodoWrapper from './components/TodoApp/TodoWrapper';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/infinite-scroll' element={<Infinitescroll/>} />
         <Route path='/contactUs' element={<ContactUs/>}/>
         <Route path='/registration-form' element={<RegistrationFrom/>} />
+        <Route path='/todo-list' element={<TodoWrapper/>}/>
       </Routes>
     </Router>
   );
