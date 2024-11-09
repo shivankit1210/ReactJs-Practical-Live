@@ -157,7 +157,7 @@ const Navbar = () => {
                   <Link
                   to="/todo-list"
                   className="block px-4 py-2 hover:bg-gray-300"
-                  onClick={() => setDropdownOpen(false)}
+                  onClick={() => { setDropdownOpen(false); setMenuOpen(false); }}
                   >
                   ToDo List
                   </Link>
