@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+
 const FetchComponent = () => {
 
     const [data,setData] = useState([]);
@@ -9,6 +10,7 @@ const FetchComponent = () => {
         const fetchUser = async () => {
             try {
               const response = await axios.get("https://jsonplaceholder.typicode.com/users");
+              console.log(response.data)
               setData(response.data);
              
               console.log(response.data);
@@ -16,6 +18,7 @@ const FetchComponent = () => {
               console.log(error);
             }
           };
+
 
 
 
@@ -29,7 +32,7 @@ const FetchComponent = () => {
       <button className='bg-red-500 w-48 rounded-md text-white font-semibold'  onClick={fetchUser}>Click to fetch data</button>
       {
       data.map((e)=>
-        (<span className="text-white font-light"  key={e.id}>Name: "{e.name}" </span>
+        (<li className="text-white font-light p-2 flex flex-col "  key={e.id}>Email of {e.name} from API is "{e.email}" </li>
         )
       )
       }
@@ -39,3 +42,70 @@ const FetchComponent = () => {
 };
 
 export default FetchComponent;
+
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+
+
+// const FetchComponent = () =>{
+
+//   const[products,setProducts]= useState([])
+//   const [favItems,setFavItems]= useState([])
+
+//   const fetchData = async () =>{
+//     try {
+//       const response= await axios.get("https://fakestoreapi.com/products")
+//       setProducts(response.data.slice(0,20))
+//       console.log(response.data)
+      
+//     } catch (error) {
+//       console.log(error)
+//     }
+//   }
+
+//   const addItem = (id) =>{
+//    products.map((product)=>{
+//     if(product.id==id){
+//       setFavItems([...favItems,product])
+//     }
+//    })
+//   }
+
+//   useEffect(()=>{
+//     fetchData();
+//   },[])
+
+//   return(
+//     <div>
+//       <h2>
+//         {
+//           favItems.map((product)=>{
+//             return(
+//               <li>
+//                 {product.title}
+//               </li>
+//             )
+//           })
+//         }
+//       </h2>
+//       <h1>products</h1>
+//       {
+//         products.map((product)=>{
+//           return(
+//             <li>
+//             {product.title}
+//             <button onClick={()=>addItem(product.id)}>ADD </button>
+//           </li>
+        
+
+//           )
+          
+//         })
+//       }
+
+    
+//     </div>
+//   )
+// }
+
+// export default FetchComponent;

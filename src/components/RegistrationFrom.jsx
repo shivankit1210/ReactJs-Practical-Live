@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import toast,{Toaster} from 'react-hot-toast';
 
-
 const RegistrationFrom = () => {
 
   const [data,setdata] =useState({
@@ -22,7 +21,7 @@ const RegistrationFrom = () => {
   //Handle error during validation
   const [error,setError]= useState("");
 
- // form validation
+//  form validation
   const handleSubmit=(e)=>{
   e.preventDefault();
   if(data.password != data.ConfirmPassword ){
@@ -71,11 +70,12 @@ const RegistrationFrom = () => {
             </div>
 
 
-        </form>
+         </form>
 
-      </div>
-    </div>
+       </div>
+     </div>
   )
 }
 
 export default RegistrationFrom
+
