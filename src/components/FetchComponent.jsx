@@ -19,13 +19,6 @@ const FetchComponent = () => {
             }
           };
 
-          
-          // https://jsonplaceholder.typicode.com/users
-
-
-
-
- 
 
   return (
     <div className='flex flex-col  place-content-center items-center bg-gray-900  w-[100%] text-red-600   text-lg font-bold fetch-comp'>
@@ -55,69 +48,3 @@ const FetchComponent = () => {
 
 export default FetchComponent;
 
-// import { useEffect, useState } from "react";
-// import axios from "axios";
-
-
-// const FetchComponent = () =>{
-
-//   const[products,setProducts]= useState([])
-//   const [favItems,setFavItems]= useState([])
-
-//   const fetchData = async () =>{
-//     try {
-//       const response= await axios.get("https://fakestoreapi.com/products")
-//       setProducts(response.data.slice(0,20))
-//       console.log(response.data)
-      
-//     } catch (error) {
-//       console.log(error)
-//     }
-//   }
-
-//   const addItem = (id) =>{
-//    products.map((product)=>{
-//     if(product.id==id){
-//       setFavItems([...favItems,product])
-//     }
-//    })
-//   }
-
-//   useEffect(()=>{
-//     fetchData();
-//   },[])
-
-//   return(
-//     <div>
-//       <h2>
-//         {
-//           favItems.map((product)=>{
-//             return(
-//               <li>
-//                 {product.title}
-//               </li>
-//             )
-//           })
-//         }
-//       </h2>
-//       <h1>products</h1>
-//       {
-//         products.map((product)=>{
-//           return(
-//             <li>
-//             {product.title}
-//             <button onClick={()=>addItem(product.id)}>ADD </button>
-//           </li>
-        
-
-//           )
-          
-//         })
-//       }
-
-    
-//     </div>
-//   )
-// }
-
-// export default FetchComponent;

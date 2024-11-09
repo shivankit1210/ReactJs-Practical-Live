@@ -72,8 +72,6 @@ const Navbar = () => {
                   to="/todo-list"
                   className="block px-4 py-2 hover:bg-gray-300"
                   onClick={() => setDropdownOpen(false)}
-
-                  
                   >
                   ToDo List
                   </Link>
@@ -146,7 +144,7 @@ const Navbar = () => {
                       Infinite Scroll
                     </Link>
                   </li>
-                  <li className="">
+                  <li className="border-b">
                     <Link
                       to="/registration-form"
                       className="block px-4 py-1 hover:bg-gray-500"
@@ -155,6 +153,15 @@ const Navbar = () => {
                       Registration Form
                     </Link>
                   </li>
+                  <li className='border-b'>
+                  <Link
+                  to="/todo-list"
+                  className="block px-4 py-2 hover:bg-gray-300"
+                  onClick={() => setDropdownOpen(false)}
+                  >
+                  ToDo List
+                  </Link>
+                </li>
                 </ul>
               )}
 
@@ -170,128 +177,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
-
-// const Navbar = () => {
-//   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-//   // Toggle dropdown
-//   const toggleDropdown = () => {
-//     setDropdownOpen(!dropdownOpen);
-//   };
-
-//   return (
-//     <nav className="bg-gray-800 text-white p-4">
-//       <div className="container mx-auto flex justify-between items-center">
-//         {/* Logo / Branding */}
-//         <div className="text-sm md:text-xl font-bold whitespace-nowrap">
-//           <Link to="/" className=" text-xs md:text-lg hover:text-gray-300 ">SHIVANKIT AGARWAL</Link>
-//         </div>
-//         {/* <div className="text-sm md:text-xl font-bold whitespace-nowrap">SHIVANKIT AGARWAL</div> */}
-
-//         {/* Navbar Links */}
-//         <div className="space-x-4 font-semibold ml-16 flex flex-row justify-start  w-[60%] gap-12">
-//           <Link to="/" className=" text-sm md:text-lg hover:text-gray-300 hover:underline">Home</Link>
-
-//           {/* Dropdown Button */}
-//           <div className="relative inline-block text-sm md:text-lg whitespace-nowrap">
-//             <button
-//               onClick={toggleDropdown}
-//               className="hover:text-gray-300 hover:underline"
-//             >
-//             Machine Round Problem
-//             </button>
-
-//             {/* Dropdown Menu */}
-//             {dropdownOpen && (
-//               <ul className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg">
-//                 <li className="border-b">
-//                   <Link
-//                     to="/counter"
-//                     className="block px-4 py-2 hover:bg-gray-300"
-//                     onClick={() => setDropdownOpen(false)} // Close dropdown when clicked
-//                   >
-//                     Counter
-//                   </Link>
-//                 </li>
-//                 <li className="border-b">
-//                   <Link
-//                     to="/fetch-component"
-//                     className="block px-4 py-2 hover:bg-gray-300"
-//                     onClick={() => setDropdownOpen(false)}
-//                   >
-//                     Fetch Component
-//                   </Link>
-//                 </li>
-//                 <li>
-//                   <Link
-//                     to="/infinite-scroll"
-//                     className="block px-4 py-2 hover:bg-gray-300"
-//                     onClick={() => setDropdownOpen(false)}
-//                   >
-//                     Infinite Scroll
-//                   </Link>
-//                 </li>
-//                 <li className="border-b">
-//                   <Link
-//                     to="/registration-form"
-//                     className="block px-4 py-2 hover:bg-gray-300"
-//                     onClick={() => setDropdownOpen(false)}
-//                   >
-//                     Registration Form
-//                   </Link>
-//                 </li>
-//               </ul>
-//             )}
-//           </div>
-//           <Link to="https://github.com/shivankit1210" className=" text-sm md:text-lg hover:text-gray-300 hover:underline">Github</Link>
-//           <Link to="https://leetcode.com/u/_SHIV_ANKIT_/" className=" text-sm md:text-lg hover:text-gray-300 hover:underline">Leetcode</Link>
-//           <Link to="https://www.linkedin.com/in/shivankit-agarwal/" className=" text-sm md:text-lg hover:text-gray-300 hover:underline">LinkedIn</Link>
-
-
-//           {/* <Link to="/contactUs" className="hover:text-gray-300 hover:underline">Contact</Link> */}
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
 
 
 
