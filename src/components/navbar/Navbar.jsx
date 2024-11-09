@@ -67,15 +67,6 @@ const Navbar = () => {
                     Infinite Scroll
                   </Link>
                 </li>
-                <li className="border-b">
-                  <Link
-                    to="/registration-form"
-                    className="block px-4 py-2 hover:bg-gray-300"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Registration Form
-                  </Link>
-                </li>
                 <li className='border-b'>
                   <Link
                   to="/todo-list"
@@ -85,6 +76,15 @@ const Navbar = () => {
                   
                   >
                   ToDo List
+                  </Link>
+                </li>
+                <li className="border-b">
+                  <Link
+                    to="/registration-form"
+                    className="block px-4 py-2 hover:bg-gray-300"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Registration Form
                   </Link>
                 </li>
               </ul>
