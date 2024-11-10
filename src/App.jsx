@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import ContactUs from './components/ContactUs';
 import RegistrationFrom from './components/RegistrationFrom';
 import TodoWrapper from './components/TodoApp/TodoWrapper';
+import ImageCarousel from './components/ImageCarousel';
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
         <Route path='/contactUs' element={<ContactUs/>}/>
         <Route path='/registration-form' element={<RegistrationFrom/>} />
         <Route path='/todo-list' element={<TodoWrapper/>}/>
+        <Route path='/contact-us' element={<ContactUs/>}/>
+        <Route path='image-carousel' element={<ImageCarousel/>}/>
+  
       </Routes>
     </Router>
   );

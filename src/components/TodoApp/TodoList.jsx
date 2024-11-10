@@ -12,8 +12,8 @@ const TodoList = ({allTodos,deleteTodo,editTodo}) => {
           <div className=' w-[70vw] md:w-[20vw] h-[20vh] bg-white rounded-md p-2  flex flex-col place-content-between'>
             <p className='text-black font-serif text-xl'>{text}</p>
             <div className=' flex w-[60%]  gap-x-5 '>
-              <button className='bg-green-400 py-1 px-2 rounded-md font-semibold cursor-pointer hover:bg-green-600' onClick={()=>editTodo(id)}>Edit</button>
-              <button className='bg-red-600 py-1 px-2 rounded-md font-semibold cursor-pointer hover:bg-red-800' onClick={()=>deleteTodo(id)}>Task done</button>
+              <button className='bg-green-400 py-1 px-2 whitespace-nowrap  rounded-md font-semibold cursor-pointer hover:bg-green-600' onClick={()=>editTodo(id)}>Edit</button>
+              <button className='bg-red-600 py-1 px-2  whitespace-nowrap rounded-md font-semibold cursor-pointer hover:bg-red-800' onClick={()=>deleteTodo(id)}>Task done</button>
             </div>
           </div>
           

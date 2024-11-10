@@ -19,6 +19,11 @@ const FetchComponent = () => {
             }
           };
 
+          const truncateText = (text,maxLength) =>{
+           if(text.length<=maxLength) return text;
+           return text.slice(0,maxLength) + ". . . see more";
+          };
+
 
   return (
     <div className='flex flex-col  place-content-center items-center bg-gray-900  w-[100%] text-red-600   text-lg font-bold fetch-comp'>
@@ -32,7 +37,7 @@ const FetchComponent = () => {
       (
         <div className="w-96 h-56 bg-white shadow-sm  shadow-white flex flex-col flex-w p-1 rounded-lg hover:shadow-lg">
           <span className="text-md text-center text-black">{e.title}</span>
-          <span className="text-sm text-gray-500 font-light">{e.description}</span>
+          <span className="text-sm text-gray-500 font-light">{truncateText(e.description,250)}</span>
           
         </div>
       )
