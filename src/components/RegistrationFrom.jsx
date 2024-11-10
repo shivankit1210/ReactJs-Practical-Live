@@ -33,7 +33,7 @@ const RegistrationFrom = () => {
 
   if(!isStrongPassword(data.password)){
     console.log(data.password)
-     setError("password must be 8 character and contain special character")
+     setError("password must be 8 character and atleast contain one special character and a number")
      return;
   }
 
