@@ -11,6 +11,7 @@ const RegistrationFrom = () => {
     ConfirmPassword:"",
   });
 
+  // Update in my registration form
   const isStrongPassword = (password)=>{
     const regex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return regex.test(password);
