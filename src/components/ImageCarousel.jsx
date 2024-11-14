@@ -43,13 +43,13 @@ const ImageCarousel = () => {
           className="bg-white p-2 rounded-md shadow-sm font-semibold shadow-white hover:bg-gray-200"
           onClick={handleCarousel1}
         >
-          Using transform
+          Using Tailwind
         </button>
         <button
           className="bg-white p-2 rounded-md shadow-sm font-semibold shadow-white hover:bg-gray-200"
           onClick={handleCarousel2}
         >
-          Using transition
+          Using Hooks
         </button>
       </div>
 
