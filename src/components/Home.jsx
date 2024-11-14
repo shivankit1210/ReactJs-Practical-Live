@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section id="home" className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-4">
+    <section id="home" className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-4 overflow-hidden">
       <div className="container mx-auto text-center py-10">
         {/* Intro Heading */}
         <h1 className="text-4xl sm:text-6xl font-bold mb-4">
