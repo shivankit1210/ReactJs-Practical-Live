@@ -83,8 +83,11 @@ const ImageCarousel = () => {
         </div>
       ) : (
         <div className="flex place-content-center items-center ">
-          <GrPrevious className="text-white size-20 md:size-10" size={30} onClick={prevImg} />
-          <div className="flex place-content-center items-center mt-5 mb-5 rounded-lg overflow-hidden">
+          <GrPrevious
+            className="text-white size-10 md:size-10"
+            onClick={prevImg}
+          />
+          {/* <div className="flex place-content-center items-center mt-5 mb-5 rounded-lg overflow-hidden">
             <img
               src={carouselData[currentIndex].url}
               alt=""
@@ -92,9 +95,21 @@ const ImageCarousel = () => {
                 fade ? "opacity-0" : "opacity-100"
               }`}
             />
+          </div> */}
+          <div className=" h-[30vh] w-[80vw] md:w-[80vw] md:h-[80vh] flex place-content-center items-center mt-5 mb-5 rounded-lg overflow-hidden">
+            <img
+              src={carouselData[currentIndex].url}
+              alt=""
+              className={`w-full h-full object-cover transition-opacity duration-500 ${
+                fade ? "opacity-0" : "opacity-100"
+              }`}
+            />
           </div>
 
-          <GrNext className="text-white size-20 md:size-10" size={30} onClick={nxtImg} />
+          <GrNext
+            className="text-white size-10 md:size-10"
+            onClick={nxtImg}
+          />
         </div>
       )}
     </div>
